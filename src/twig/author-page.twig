@@ -1,0 +1,48 @@
+{% extends 'templates/page.twig' %}
+
+{# Хлебные крошки #}
+{% block pageBreadcrumbs %}
+    {% include 'components/breadcrumb.twig' with {
+        crumbs: [
+            { name: 'Автор' }
+        ]
+    } %}
+{% endblock %}
+
+{# Контент #}
+{% block pageContent %}
+    <section class="row">
+        <div class="col-lg-8">
+            <div class="author-page__info">
+                <div class="author-page__thumbnail">
+                    <a href="#">
+                        <img data-src="images/author/placeholder.svg" class="thumbnail lazy thumbnail--lg thumbnail--round link" alt="" width="72" height="72">
+                    </a>
+                </div>
+
+                <div class="col-item">
+                    <h1 class="h3">
+                        <a href="#" class="link-dark">Piter AffTimes</a>
+                    </h1>
+
+                    <div class="author-page__actions">
+                        <b class="text-opacity mr-1">
+                            на сайте с
+                        </b>
+
+                        <div class="action">
+                            {% include 'components/svg.twig' with {id: 'calendar', width: '13', height: '15'} %}
+                            09.11.21
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-content mt-2">
+                <p>Гость ProTraffic — Head of affiliates Prime XBT, партнерки с эксклюзивными офферами на крипту. Он рассказало платформе, арбитраже трафика на крипту, основных подходах, правильных акцентах при выборе оффера и о том, что будет, если биткоин рухнет в один день. Приятного чтения!</p>
+            </div>
+
+            <a href="author-edit.html" class="mt-3 btn btn--gold-border btn--size-lg">Редактировать</a>
+        </div>
+    </section>
+{% endblock %}

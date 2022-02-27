@@ -1,0 +1,36 @@
+.social {
+  display: flex;
+  margin: -.5rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+
+  &__item {
+    margin: .5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: rgba(color("black"), .2);
+    @extend %flex-center-block;
+    transition: border-radius $transition, background-color $transition, box-shadow $transition;
+
+    svg {
+      display: block;
+      height: 1.8rem;
+      fill: color("white");
+    }
+
+    &:hover {
+      border-radius: radius("xs");
+      @include gold-gradient;
+      @extend %gold-box-shadow;
+
+      svg {
+        fill: color("black");
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 8px 15px rgba(254, 184, 2, 0.75);
+    }
+  }
+}

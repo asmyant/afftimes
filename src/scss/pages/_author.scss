@@ -1,0 +1,39 @@
+.author-page {
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+
+  &__thumbnail {
+    margin-right: 3rem;
+
+    @include media-breakpoint-down(md) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__edit {
+    &-left {
+      @include media-breakpoint-up(md) {
+        margin-right: 3rem;
+        flex: 0 0 15rem;
+        max-width: 15rem;
+      }
+    }
+
+    &-row {
+      @include media-breakpoint-up(md) {
+        display: flex;
+      }
+    }
+
+    &-form {
+      flex-grow: 1;
+    }
+  }
+}

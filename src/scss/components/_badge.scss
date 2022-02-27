@@ -1,0 +1,25 @@
+.badge {
+  height: 2.5rem;
+  padding: 0 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  @include gold-gradient;
+  color: color('black');
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: radius('xs');
+
+  svg{
+    margin-right: .5rem;
+  }
+
+  &:hover {
+    background: color('black');
+    color: color('white');
+
+    svg{
+      fill: color('white');
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.section {
+  &__head {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.section-archive {
+  padding-top: 6.5rem;
+
+  &__head {
+    margin-bottom: 2.5rem;
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-filters {
+      font-size: 1.8rem;
+
+      @include media-breakpoint-up(md) {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

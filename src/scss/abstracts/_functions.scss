@@ -1,0 +1,16 @@
+@use "variables";
+
+// Путь до файла с картинками
+@function image($url) {
+   @return url(variables.$image-directory + '/' + #{$url})
+}
+
+// Получения цвета из мапа
+@function color($color) {
+   @return map-get(variables.$theme-colors, $color)
+}
+
+// Получить border-radius
+@function radius($size) {
+   @return map-get(variables.$border-radius, $size)
+}

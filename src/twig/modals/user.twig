@@ -1,0 +1,159 @@
+{# Вход / Регистрация #}
+<div class="modal fade js-login-modal" id="user" tabindex="-1" aria-labelledby="userLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal__content">
+            <a href="#" data-bs-dismiss="modal" class="modal__close">Отмена</a>
+
+            <div class="modal__header">
+                <ul class="nav modal__tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                                type="button" role="tab" aria-controls="home" aria-selected="true">
+                            Вход
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                                type="button" role="tab" aria-controls="profile" aria-selected="false">
+                            Регистрация
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="modal__body">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        {# Вход #}
+                        <form action="" class="js-login-form" novalidate>
+                            <div class="form-group">
+                                <input type="text" class="form-input" placeholder="Логин" required="required" id="login" name="login">
+                                <div class="invalid-feedback">
+                                    Поле обязательно для заполнения
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <a href="#" class="form-icon js-show-password">
+                                    {% include '../components/svg.twig' with {id: 'eye', width: 20, height: 15} %}
+                                </a>
+                                <input type="password" class="form-input" placeholder="Пароль" required="required" id="pass" name="pass">
+                                <div class="invalid-feedback form-error">
+                                    Поле обязательно для заполнения
+                                </div>
+                            </div>
+                            <div class="text-right">
+
+                            </div>
+                            <button type="submit" class="mt-2 btn btn--gold-border btn--size-lg btn--block">
+                                Войти
+                            </button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        {# Регистрация #}
+                        <form action="" class="js-reg-form" novalidate>
+                            <div class="form-group">
+                                <input type="text" class="form-input" placeholder="Ваш логин" name="reg-login"
+                                       id="reg-login" required="required">
+                                <div class="invalid-feedback">
+                                    Поле обязательно для заполнения
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-input" placeholder="Ваш E-mail*" name="reg-email"
+                                       id="reg-email" required="required">
+                                <div class="invalid-feedback form-error">
+                                    Необходимо ввести валидный E-mail
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <a href="#" class="form-icon js-show-password">
+                                    {% include '../components/svg.twig' with {id: 'eye', width: 20, height: 15} %}
+                                </a>
+
+                                <input type="password" class="form-input" placeholder="Ваш пароль" name="reg-pass"
+                                       id="reg-pass" required="required">
+
+                                <div class="invalid-feedback">
+                                    Поле обязательно для заполнения
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <a href="#" class="form-icon js-show-password">
+                                    {% include '../components/svg.twig' with {id: 'eye', width: 20, height: 15} %}
+                                </a>
+
+                                <input type="password" class="form-input" placeholder="Повторить пароль"
+                                       name="reg-rpass" id="reg-rpass" required="required">
+
+                                <div class="invalid-feedback">
+                                    Поле обязательно для заполнения
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn--gold-border btn--size-lg btn--block mt-2 js-spinner">
+                                <div class="spinner-border text-light js-spinner__item none" role="status"></div>
+                                <span class="js-spinner__text">Зарегистрироваться</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Восстановить пароль #}
+<div class="modal fade" id="replay-password" tabindex="-1" aria-labelledby="replay-passwordLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal__content">
+            <a href="#" data-bs-dismiss="modal" class="modal__close">Отмена</a>
+
+            <div class="modal__header modal__header--title">Восстановить пароль</div>
+
+            <div class="modal__body">
+                <form action="" class="js-rpass-form" novalidate>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Ваш E-mail*" name="remail" id="remail"
+                               required="required">
+                        <div class="invalid-feedback form-error">
+                            Необходимо ввести валидный E-mail
+                        </div>
+                    </div>
+
+                    <button type="submit" class="mt-2 btn btn--gold-border btn--size-lg btn--block">
+                        Восстановить пароль
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Восстановить пароль #}
+<div class="modal fade js-success-reg-modal" id="success-registration" tabindex="-1" aria-labelledby="success-registrationLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal__content">
+            <div class="modal__body align-center gy-1">
+                <a href="#" data-bs-dismiss="modal" class="modal__close">Отмена</a>
+
+                <div>
+                    <h4 class="h4">Поздравляем!</h4>
+                </div>
+
+                <div>
+                    <b class="text-opacity">
+                        Вы успешно зарегистрировались <br> на нашем сайте!
+                    </b>
+                </div>
+
+                <div>
+                    <a href="author-page.html" class="btn btn--gold-border btn--size-lg">Войти в личный кабинет</a>
+                </div>
+
+                <div>
+                    <a href="#" class="link-gray" data-bs-dismiss="modal" ><b>Остаться на главной</b></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

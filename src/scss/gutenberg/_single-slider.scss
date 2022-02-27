@@ -1,0 +1,62 @@
+.single-slider.gutenberg {
+  margin-bottom: 3rem;
+
+  .single-slider {
+    &__controls {
+      display: flex;
+      align-items: center;
+
+      @include media-breakpoint-down(md) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__bottom {
+      margin-top: 2rem;
+      color: color('text-color');
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      justify-content: space-between;
+
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+      }
+    }
+
+    &__arrow {
+      cursor: pointer;
+
+      &.swiper-button-disabled {
+        opacity: .2;
+        cursor: no-drop;
+      }
+    }
+
+    &__pagination {
+      align-items: center;
+      display: flex;
+      margin: 0 3rem;
+
+      span {
+        width: .7rem;
+        margin: 0 .7rem;
+        height: .7rem;
+        background-color: color('gray');
+        border-radius: 50%;
+        transition: .3s;
+
+        &.swiper-pagination-bullet-active {
+          width: 1.3rem;
+          height: 1.3rem;
+          background-color: color('gold-dark');
+        }
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

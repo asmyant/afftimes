@@ -1,0 +1,84 @@
+{% extends 'templates/page.twig' %}
+
+{# Заголовок #}
+{% block pageTitle %}Редактирование{% endblock %}
+
+{# Хлебные крошки #}
+{% block pageBreadcrumbs %}
+    {% include 'components/breadcrumb.twig' with {
+        crumbs: [
+            { name: 'Автор', link: 'author-page.html' },
+            { name: 'Редактирование' }
+        ]
+    } %}
+{% endblock %}
+
+{# Контент #}
+{% block pageContent %}
+    <section class="row">
+        <div class="col-lg-10">
+            <form action="#" class="author-page__edit-row js-author-edit-form gy-2" novalidate>
+                <div class="author-page__edit-left align-center">
+                    <img data-src="images/author/select.svg" class="thumbnail thumbnail--lg thumbnail--round js-load-image__container lazy" alt="" width="72" height="72">
+
+                    <div class="mt-1">
+                        <label for="image" class="link-gray js-load-image__add-button">
+                            <input type="file" id="image" class="js-load-image__input">
+                            <b class="js-load-image__action" data-action="add">Добавить фото</b>
+                        </label>
+
+                        <a href="#" class="js-load-image__delete-button link-red none">
+                            Удалить фото
+                        </a>
+                    </div>
+                </div>
+
+                <div class="author-page__edit-form">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="row gx-1">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <a href="#" class="form-icon form-icon--opacity">
+                                            {% include 'components/svg.twig' with {id: 'edit', width: 20, height: 15} %}
+                                        </a>
+                                        <input type="text" class="form-input" placeholder="Имя" required name="author-name" id="author-name">
+                                        <div class="invalid-feedback form-error">
+                                            Поле обязательно для заполнения
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <a href="#" class="form-icon form-icon--opacity">
+                                            {% include 'components/svg.twig' with {id: 'edit', width: 20, height: 15} %}
+                                        </a>
+                                        <input type="email" class="form-input" placeholder="Почта" required name="author-email" id="author-email">
+                                        <div class="invalid-feedback form-error">
+                                            Необходимо ввести валидный E-mail
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <a href="#" class="form-icon form-icon--opacity">
+                            {% include 'components/svg.twig' with {id: 'edit', width: 20, height: 15} %}
+                        </a>
+                        <textarea rows="5" class="form-input" placeholder="Текст" required="" name="author-message" id="author-message"></textarea>
+                        <div class="invalid-feedback form-error">
+                            Поле обязательно для заполнения
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn--gold-border btn--size-lg js-spinner">
+                        <div class="spinner-border text-light js-spinner__item none" role="status"></div>
+                        <span class="js-spinner__text">Сохранить</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,24 @@
+<div class="service">
+    <a href="single-service.html" class="service__thumbnail" aria-label="Adwile">
+        <img data-src="https://picsum.photos/500/300.webp?random=1" class="lazy" alt="" width="150" height="60">
+    </a>
+
+    <div class="service__content">
+        <div>
+            <div class="service__rating">
+                {% include '../../components/svg.twig' with {id: 'star', width: 20, height: 20} %}
+                <span>4.2</span>
+            </div>
+        </div>
+        <div class="service__right">
+            <span class="service__text">
+                Adwile — крупная рекламная тизерная сеть с объемом трафика в 12 млрд показов ежемесячно.
+            </span>
+
+            <a href="#" class="link-purple service__link">
+                {% include '../../components/svg.twig' with {id: 'glob'} %}
+                adwile.com/
+            </a>
+        </div>
+    </div>
+</div>

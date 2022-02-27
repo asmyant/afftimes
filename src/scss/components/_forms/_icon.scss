@@ -1,0 +1,14 @@
+.form-icon {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.3rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--opacity {
+    opacity: .4;
+  }
+}

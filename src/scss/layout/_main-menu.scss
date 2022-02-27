@@ -1,0 +1,40 @@
+.site-menu {
+  flex-grow: 1;
+  display: flex;
+  font-size: 1.8rem;
+  align-self: flex-end;
+  justify-content: space-between;
+  @extend %list-null;
+  margin: 0 6rem .2rem 6rem;
+
+  @include media-breakpoint-down(xxl) {
+    margin: 0 3rem .2rem 3rem;
+    font-size: 1.6rem;
+  }
+
+  .current-menu-item a, a:hover {
+    &:before {
+      width: 100%;
+    }
+  }
+
+  a {
+    position: relative;
+    color: color("black");
+    text-decoration: none;
+    line-height: 100%;
+    display: block;
+
+    &:before {
+      content: '';
+      left: 0;
+      width: 0;
+      transition: width $transition;
+      height: 5px;
+      position: absolute;
+      top: 100%;
+      border-radius: 20px;
+      @include gold-gradient;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    {% include '../layout/close-partner.twig' with {page: true} %}
+    <div class="container">
+        <div class="site-page__top-banner">
+            {% include '../components/banner/horizontal/image.twig' %}
+        </div>
+
+        <div class="site-page__head">
+            {% if block("pageTitle") is defined %}
+                <h1 class="h2 heading-bg">
+        <span>
+            {% block pageTitle %}{% endblock %}
+        </span>
+                </h1>
+            {% endif %}
+
+            <div class="site-page__breadcrumb">
+                {% block pageBreadcrumbs %}{% endblock %}
+            </div>
+
+            {% if block("pageText") is defined %}
+                <div class="row site-page__text">
+                    {% block pageText %}{% endblock %}
+                </div>
+            {% endif %}
+        </div>
+
+        {% block pageContent %}{% endblock %}
+    </div>
+{% endblock %}

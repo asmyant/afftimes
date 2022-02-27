@@ -1,0 +1,64 @@
+// Базовые стили для брендинга
+.branding {
+  padding-top: 13rem;
+  transform: skewY(-1deg);
+  margin-top: -3rem;
+
+  &__container {
+    transform: skewY(1deg);
+  }
+
+  &__hidden {
+    overflow: hidden;
+  }
+
+  @include media-breakpoint-up(lg) {
+    &.is-page {
+      .branding {
+        &__row {
+          height: 40rem;
+        }
+
+        &__title {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+
+  &:before {
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 125%;
+    background: image('close-partner/dots.webp') repeat-x center bottom;
+  }
+
+  &__row {
+    height: 70rem;
+
+    @include media-breakpoint-down(xxl) {
+      height: 45rem;
+    }
+
+    @include media-breakpoint-down(xl) {
+      height: 45rem;
+    }
+
+    @include media-breakpoint-down(lg) {
+      height: initial;
+      text-align: center;
+    }
+  }
+
+  & + * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+// Баннеры
+@import "pop-ads";

@@ -1,0 +1,26 @@
+<div class="swiper js-gut-one-slider gutenberg single-slider">
+    <div class="swiper-wrapper">
+        {% for i in 0..5 %}
+            <div class="swiper-slide">
+                <a data-fancybox="responsive" data-src="https://picsum.photos/900/420.webp?random={{ i }}">
+                    <img data-src="https://picsum.photos/900/420.webp?random={{ i }}" width="900" height="420" class="lazy"/>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="single-slider__bottom">
+        <div class="single-slider__controls">
+            <div class="js-gut-one-slider__prev single-slider__arrow">
+                {% include '../svg.twig' with {id: 'left', width: 12, height: 20} %}
+            </div>
+            <div class="js-gut-one-slider__pagination single-slider__pagination"></div>
+            <div class="js-gut-one-slider__next single-slider__arrow">
+                {% include '../svg.twig' with {id: 'right', width: 12, height: 20} %}
+            </div>
+        </div>
+
+        <span>
+            <span class="js-gut-one-slider__active">0</span> из <span class="js-gut-one-slider__count"></span> фотографий
+        </span>
+    </div>
+</div>

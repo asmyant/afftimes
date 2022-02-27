@@ -1,0 +1,75 @@
+<header class="site-header js-header">
+    {# Desktop #}
+    <div class="site-header__wrapper js-header-fixed is-desktop">
+        <div class="container site-header__flex">
+            <a href="/" aria-label="Afftimes">
+                <img data-src="images/logo.svg" alt="Afftimes" class="site-header__logo lazy" width="165" height="30"/>
+            </a>
+
+            <ul class="site-menu">
+                <li class="current-menu-item"><a href="posts.html">Статьи</a></li>
+                <li><a href="affiliates.html">Партнерки</a></li>
+                <li><a href="services.html">Сервисы</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="events.html">Конференции</a></li>
+            </ul>
+
+            <div class="site-header__flex">
+                <a class="btn btn--size-md btn--gold site-header__btn" href="#">
+                    <img data-src="images/icons/fire.png" class="lazy" alt="" width="24" height="20"/>
+                    Ваша реклама
+                </a>
+
+                <a class="btn btn--size-md btn--purple site-header__btn site-header__secondary-button mx-1" href="#">
+                    Ваша реклама №2
+                </a>
+
+                <a class="site-header__user mx-1" href="#" data-bs-toggle="modal" data-bs-target="#user">
+                    <span class="site-header__icon">
+                        {% include '../components/svg.twig' with {id: 'user', width: '20', height: '18'} %}
+                    </span>
+                    Войти
+                </a>
+
+                <a class="js-search__open" href="#">
+                    <span class="site-header__icon">
+                        {% include '../components/svg.twig' with {id: 'search', width: '20', height: '20'} %}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {# Mobile #}
+    <div class="site-header__wrapper is-mobile container">
+        <div class="site-header__flex site-header__flex--between">
+            <div class="site-header__flex">
+                <a href="/">
+                    <img data-src="images/logo-short.svg" alt="Afftimes" class="site-header__logo lazy" width="46" height="45"/>
+                </a>
+
+                <a class="btn btn--size-md btn--gold site-header__btn ml-2" href="#">
+                    Ваша реклама
+                </a>
+            </div>
+
+            <div class="site-header__flex">
+                <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    {% include '../components/svg.twig' with {id: 'burger', width: '50', height: '13'} %}
+                </a>
+
+                <a aria-label="Войти" class="site-header__user mx-1" href="#" data-bs-toggle="modal" data-bs-target="#user">
+                    <span class="site-header__icon">
+                        {% include '../components/svg.twig' with {id: 'user', width: '20', height: '18'} %}
+                    </span>
+                </a>
+
+                <a aria-label="Поиск" class="js-search__open" href="#">
+                    <span class="site-header__icon">
+                        {% include '../components/svg.twig' with {id: 'search', width: '18', height: '18'} %}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

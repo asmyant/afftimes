@@ -1,0 +1,43 @@
+<div class="post">
+    <div class="post__top post__top--sm">
+        <a href="single-event.html" class="post__thumbnail">
+            <img data-src="{{ image }}" width="340" height="220" alt='Конференция ALO KIEV 2021: как это было' class="lazy">
+        </a>
+    </div>
+
+    <div class="post__content">
+        <div>
+            <a href="single-event.html" class="post__title">
+                Kinza 360 Affiliate & AdTech forum
+            </a>
+
+            <div class="post__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sapien, ultrices...
+            </div>
+        </div>
+
+        <div class="post__bottom">
+            <div class="action">
+                {% include '../components/svg.twig' with {id: 'calendar', width: '13', height: '15'} %}
+                22.01.1993
+            </div>
+
+            <div class="action">
+                {% include '../components/svg.twig' with {id: 'location', width: '14', height: '15'} %}
+                Киев, Украина
+            </div>
+        </div>
+    </div>
+
+    {% if end == true %}
+    <div class="post__layer">
+        <div>
+            <div class="h4">Мероприятие прошло</div>
+
+            <div class="mt-2">
+                <a href="single-event.html" class="link-dark link-decoration"><b>смотреть фотоотчет</b></a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>

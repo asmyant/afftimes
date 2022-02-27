@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {# Head #}
+    {% include '../layout/head.twig' %}
+    {% block head %}{% endblock %}
+</head>
+<body class="{% block bodyClass %}{% endblock %}">
+{# Header #}
+{% include '../layout/header.twig' %}
+
+{# Content #}
+<main class="site-main">
+    {% block content %}{% endblock %}
+</main>
+
+{# Footer #}
+{% include '../layout/footer.twig' %}
+
+{# Scripts #}
+{% include '../layout/scripts.twig' %}
+{% block scripts %}{% endblock %}
+</body>
+</html>

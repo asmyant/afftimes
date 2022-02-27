@@ -1,0 +1,14 @@
+@import "../../../node_modules/@fancyapps/ui/src/Fancybox/Fancybox";
+
+
+.fancybox__thumbs .carousel__slide .fancybox__thumb::after {
+  border-color: #FEE502;
+}
+
+.fancybox__progress {
+  background-color: #FEE502;
+}
+
+[data-fancybox] {
+  cursor: pointer;
+}

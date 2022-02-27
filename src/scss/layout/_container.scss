@@ -1,0 +1,15 @@
+.container {
+  max-width: 141rem;
+  position: relative;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @include media-breakpoint-down(xxl) {
+    max-width: 131rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

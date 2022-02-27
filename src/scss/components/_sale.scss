@@ -1,0 +1,17 @@
+.sale {
+  border: 2px solid color('gold-dark');
+  height: 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  align-items: center;
+  font-size: 1.8rem;
+  border-radius: radius('xs');
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color $transition;
+
+  &:hover {
+    background: color('gold-dark');
+  }
+}

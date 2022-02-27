@@ -1,0 +1,371 @@
+.index {
+  overflow-x: hidden;
+
+  .site-main {
+    overflow: hidden;
+  }
+
+  &-section {
+    &__button {
+      text-align: center;
+      margin-top: 3rem;
+    }
+  }
+
+  &-horizontal-banner {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+    position: relative;
+    z-index: 2;
+
+    @include media-breakpoint-down(md) {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+  }
+
+  // Последние статьи
+  &-posts {
+    position: relative;
+    z-index: 2;
+
+    .post {
+      &__top {
+        min-height: 22rem;
+      }
+    }
+
+    &__container {
+      position: relative;
+    }
+
+    &__wrapper {
+      position: relative;
+      z-index: 2;
+    }
+
+    &__banner {
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+  }
+
+  // ️Самые читаемые статьи
+  &-popular {
+    &__container {
+      position: relative;
+
+      @include media-breakpoint-down(xxl) {
+        padding-top: 8rem;
+      }
+
+      @include media-breakpoint-down(md) {
+        padding-top: 5rem;
+      }
+    }
+
+    &__wrapper {
+      position: relative;
+      z-index: 2;
+
+      .banner-vertical {
+        height: 100%;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .post {
+      min-height: initial;
+      height: 100%;
+
+      &__author {
+        bottom: 1.5rem;
+        left: 2rem;
+      }
+    }
+
+    &__lg {
+      .post {
+        &__top {
+          height: 31.5rem;
+
+          @include media-breakpoint-down(md) {
+            height: 25rem;
+          }
+        }
+      }
+    }
+
+    &__sm-list {
+      & > div {
+        &:not(:last-child) {
+          margin-bottom: 3rem;
+
+          @include media-breakpoint-down(lg) {
+            margin-bottom: 1.5rem;
+          }
+
+          @include media-breakpoint-down(md) {
+            margin-bottom: 0;
+          }
+
+          @include media-breakpoint-down(sm) {
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+
+      .post {
+        &__top {
+          height: 15rem;
+        }
+      }
+    }
+
+    &__row {
+      height: 100%;
+    }
+  }
+
+  // Видео-контент по арбитражу
+  &-videos {
+    margin-top: 10rem;
+    margin-bottom: 7rem;
+    position: relative;
+    z-index: 5;
+
+    @include media-breakpoint-down(lg) {
+      margin-top: 6rem;
+    }
+
+    .swiper {
+      @include media-breakpoint-down(sm) {
+        padding-right: 3rem;
+      }
+    }
+
+    &__bottom {
+      justify-content: flex-end;
+      margin-top: -3rem;
+      position: relative;
+      z-index: 5;
+
+      @include media-breakpoint-down(lg) {
+        margin-top: 2rem;
+      }
+    }
+
+    &__arrows {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+
+      span {
+        margin: 0 2.5rem;
+        opacity: .4;
+      }
+    }
+
+    &__controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+
+        & > div {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    .swiper-slide-active {
+      .video {
+        &__thumbnail {
+          @include media-breakpoint-up(md) {
+            height: 35rem;
+          }
+        }
+      }
+    }
+
+    .video {
+      &__thumbnail {
+        height: 27rem;
+      }
+
+      &__title {
+        @include media-breakpoint-up(md) {
+          font-size: 2.4rem;
+        }
+      }
+    }
+
+    .section {
+      &__head {
+        margin-bottom: 3.5rem;
+      }
+    }
+  }
+
+  // Топ партнерских программ
+  &-affiliate {
+    margin: 9rem 0;
+    padding: 6rem 0 0;
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+      margin: 4rem 0;
+      padding: 2.5rem 0 0;
+    }
+
+    &:after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 3%;
+      top: 0;
+      background: image('home/partnerships/dots.webp') repeat-x center bottom;
+      content: '';
+      transform: rotate(1.5deg);
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 95%);
+      background: color('gold-dark');
+
+      @include media-breakpoint-down(lg) {
+        clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 99%);
+      }
+    }
+
+    &__container {
+      position: relative;
+      z-index: 2;
+    }
+
+    &__wrapper {
+      position: relative;
+      z-index: 2;
+    }
+
+    &__banner {
+      padding-top: 8.5rem;
+
+      @include media-breakpoint-down(md) {
+        padding-top: 4.5rem;
+      }
+    }
+  }
+
+  // Топ сервисов для арбитража
+  &-services {
+    &__aside {
+      max-width: 26.3rem;
+      margin-left: auto;
+
+      @include media-breakpoint-down(lg) {
+        margin: 0 auto;
+      }
+    }
+
+    &__row {
+      z-index: 5;
+      position: relative;
+    }
+
+    &__container {
+      position: relative;
+    }
+
+    @include media-breakpoint-up(md) {
+      .section__head {
+        margin-bottom: 5.5rem;
+      }
+    }
+
+    &__button {
+      margin-top: 6rem;
+      text-align: center;
+
+      @include media-breakpoint-down(md) {
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  &-mobile-row {
+    @include media-breakpoint-down(lg) {
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      padding: 0 1.5rem 1rem 1.5rem;
+      margin: 0 -1.5rem;
+
+      .col {
+        width: 280px;
+        padding: 0;
+
+        &:not(:last-child) {
+          margin-right: 1.5rem;
+        }
+      }
+    }
+  }
+
+  &-select {
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transition: visibility $transition, opacity $transition;
+
+    &.is-hide {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-left: -7rem;
+    }
+
+    &__text {
+      margin-top: 1rem;
+      padding-left: 5.5rem;
+    }
+
+    &__input {
+      display: flex;
+      width: 28rem;
+      line-height: 100%;
+      align-items: center;
+      justify-content: space-between;
+      height: 4.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      padding: 0 1.5rem;
+
+      img {
+        margin-right: 1rem;
+      }
+
+      svg {
+        cursor: pointer;
+      }
+    }
+  }
+}

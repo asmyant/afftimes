@@ -1,0 +1,12 @@
+.single-post {
+  &__actions {
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

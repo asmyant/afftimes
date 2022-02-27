@@ -1,0 +1,12 @@
+.tooltip {
+  font-size: 1.4rem;
+  cursor: pointer;
+
+  &-inner {
+    padding: 0.8rem;
+  }
+}
+
+[data-bs-toggle="tooltip"] {
+  cursor: pointer;
+}

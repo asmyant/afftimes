@@ -1,0 +1,27 @@
+<div class="service-grid">
+    <a href="single-service.html" class="service-grid__thumbnail" aria-label="CTR 10%">
+        <img data-src="https://protraffic.com/wp-content/uploads/2020/11/bemob.png" class="lazy" alt="">
+    </a>
+    <div class="service-grid__content">
+        <div>
+            <a href="single-service.html" class="service-grid__title link-dark">CTR 10%</a>
+            <div class="service-grid__text">
+                <p>
+                    {{ text }}
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="sale js-copy">
+                <input type="text" class="js-copy__input hidden" value="10% СКИДК">
+                10% СКИДКА
+                {% include '../../components/svg.twig' with {id: 'copy', width: 16, height: 20} %}
+            </div>
+
+            <a href="single-service.html" class="service-grid__link link-purple">
+                Читать обзор
+                {% include '../../components/svg.twig' with {id: 'arrow-right', width: 14, height: 14} %}
+            </a>
+        </div>
+    </div>
+</div>

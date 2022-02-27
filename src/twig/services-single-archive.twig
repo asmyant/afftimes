@@ -1,0 +1,53 @@
+{% extends 'templates/page.twig' %}
+
+{# Хлебные крошки #}
+{% block pageBreadcrumbs %}
+    {% include 'components/breadcrumb.twig' with {
+        crumbs: [
+            { name: 'Сервисы' },
+        ]
+    } %}
+{% endblock %}
+
+{# Заголовок #}
+{% block pageTitle %}Полезные сервисы{% endblock %}
+
+{# Текст страницы #}
+{% block pageText %}
+    <div class="col-lg-7">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat dignissim tellus in. Posuere
+            consequat purus dis orci, quisque. Viverra cras at neque mi mauris fermentum. Fringilla ut nisl duis gravida
+            lacus. Quam dignissim ac at eleifend imperdiet sagittis gravida tellus.</p>
+    </div>
+    <div class="col-lg-5">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat dignissim tellus in. Posuere
+            consequat purus dis orci, quisque. Viverra cras at neque mi mauris fermentum. Fringilla ut nisl duis gravida
+            lacus. Quam dignissim ac at eleifend imperdiet sagittis gravida tellus. </p>
+    </div>
+{% endblock %}
+
+
+{# Контент #}
+{% block pageContent %}
+    <section>
+        <div class="section-archive__head">
+            <h2 class="h3 mb-3">Креативы</h2>
+        </div>
+
+        <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-3">
+            {% for i in 0..7 %}
+                <div class="col">
+                    {% include 'components/services/type-2.twig' with {
+                        text: 'Zeustrack — быстрый трекер, отслеживающий, контролирующий и оптимизирующий ваши рекламные кампании.'
+                    } %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    {% include 'components/banner/horizontal/image.twig' with {class: 'site-page__bottom-banner'} %}
+
+    <div class="align-center mt-4">
+        <a class="btn btn--gold-border btn--size-lg" href="">Показать еще</a>
+    </div>
+{% endblock %}

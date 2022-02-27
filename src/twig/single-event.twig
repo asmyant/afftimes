@@ -1,0 +1,148 @@
+{% extends 'templates/aside.twig' %}
+
+{# Хлебные крошки #}
+{% block pageBreadcrumbs %}
+    {% include 'components/breadcrumb.twig' with {
+        crumbs: [
+            { name: 'новости', link: 'news.html' },
+            { name: 'У приложений с AppsFlyer сломался трекинг конверсий по неймингу в Facebook — webview-приложения RIP?' }
+        ]
+    } %}
+{% endblock %}
+
+{# Контент #}
+{% block pageContent %}
+
+    <section>
+        <div class="row">
+            <div class="col-xl-11">
+                <h1 class="h3 single__title">
+                    Как автоматизировать отправку пуш-уведомлений на iOS и Android через единый планировщик — обзор
+                    сервиса PUSH.express
+                </h1>
+
+                <div class="single__wrapper js-post-load__container">
+                    <div class="single__main">
+                        <header>
+                            <a data-fancybox="gallery" data-src="https://picsum.photos/900/420?grayscale">
+                                <img data-src="https://picsum.photos/900/420?grayscale" alt="Как" class="single__thumbnail lazy" width="900" height="420">
+                            </a>
+
+                            <div class="single-post__actions">
+                                <div>
+                                    <div class="action">
+                                        {% include 'components/svg.twig' with {id: 'location', width: '12', height: '15'} %}
+                                        Киев, Украина
+                                    </div>
+                                </div>
+
+                                <div class="post__actions">
+                                    <a href="single-post.html#comments" class="action is-link">
+                                        {% include 'components/svg.twig' with {id: 'comment', width: '14', height: '14'} %}
+                                        15
+                                    </a>
+
+                                    <div class="action">
+                                        {% include 'components/svg.twig' with {id: 'calendar', width: '13', height: '15'} %}
+                                        331
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+
+                        <main class="text-content">
+                            <p>
+                                KINZA возвращается с самым масштабным ивентом этой осени: новый формат, топовые спикеры
+                                из-за рубежа, шикарная локация, официальная препати CPA.CLUB — с каждым разом планка
+                                только выше. Особое внимание к организации, никаких очередей и столпотворений, только
+                                качественный нетворкинг и доклады. Но обо всем по порядку.
+                            </p>
+
+                            <h2>Спикеры</h2>
+
+                            <div class="mb-3">
+                                <div class="row row-cols-sm-2 row-cols-1 gy-2">
+                                    {% for i in 0..5 %}
+                                        <div class="speaker">
+                                            <div class="speaker__thumbnail">
+                                                <img data-src="https://picsum.photos/100/100.webp?grayscale" alt="Как"
+                                                     class="single__thumbnail lazy" width="80" height="80">
+                                            </div>
+                                            <div class="speaker__content">
+                                                <div class="speaker__title">Бритни Мюллер, PDtraffics</div>
+                                                <div class="speaker__text">“Передовой опыт в области SEО и AdWords”
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque dicta dignissimos et ipsa magnam officiis, pariatur perspiciatis quibusdam quidem ullam.
+                            </p>
+
+                            {% include 'components/gutenberg/single-slider.twig' %}
+                            {% include 'layout/single-content.twig' %}
+                        </main>
+
+                        <footer class="single__bottom">
+                            <div class="row single__bottom-row gy-2">
+                                <div class="col-lg-6">
+                                    <div class="post__tags single__bottom-tags">
+                                        <a href="" class="post__tag">#дизайн</a>
+                                        <a href="" class="post__tag">#еслипонравится</a>
+                                        <a href="" class="post__tag">#дизайн</a>
+                                        <a href="" class="post__tag">#хештег</a>
+                                    </div>
+
+                                    <div class="post__actions">
+                                        <a href="single-post.html#comments" class="action is-link">
+                                            {% include 'components/svg.twig' with {id: 'comment', width: '14', height: '14'} %}
+                                            15
+                                        </a>
+
+                                        <div class="action">
+                                            {% include 'components/svg.twig' with {id: 'view', width: '15', height: '10'} %}
+                                            331
+                                        </div>
+
+                                        <div class="action">
+                                            {% include 'components/svg.twig' with {id: 'calendar', width: '13', height: '15'} %}
+                                            331
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <span>Поделиться:</span>
+                                    <div class="mt-1">
+                                        {% include 'components/social.twig' %}
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+
+                    <div class="js-post-load  single__scroll">
+                        <div class="js-post-load__bar single__scroll-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block pageBottomContent %}
+    <div class="row single__banner-bottom">
+        <div class="col-xl-11">
+            {% include 'components/banner/horizontal/image.twig' %}
+        </div>
+    </div>
+
+    <section class="comments row" id="comments">
+        <div class="col-xl-8">
+            {% include 'layout/comments.twig' %}
+        </div>
+    </section>
+{% endblock %}

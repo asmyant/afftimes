@@ -1,0 +1,194 @@
+.was-validated {
+  .subscribe {
+    &__input {
+      &.is-invalid, &:invalid {
+        &::placeholder, & {
+          color: color('red');
+          border-color: color('red');
+        }
+      }
+    }
+  }
+}
+
+.subscribe {
+  &__title {
+    font-family: $font-family-heading;
+    font-size: 9.6rem;
+    font-weight: 800;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: color('black');
+    color: transparent;
+
+    @include media-breakpoint-down(xxl) {
+      font-size: calc(3.2rem + 3.1vw);
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  &__row {
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__form {
+    @include media-breakpoint-up(md) {
+      display: flex;
+    }
+  }
+
+  &__input {
+    height: 4.4rem;
+    width: 100%;
+    border: none;
+    margin-right: 2.5rem;
+    background: transparent;
+    border-bottom: 2px solid color('white');
+
+    &::placeholder {
+      opacity: 0.5;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: color('black');
+    }
+  }
+
+  &__content {
+    padding: 4rem 4.5rem 6rem;
+    @include gold-gradient;
+    color: white;
+    border-radius: radius('md');
+
+    @include media-breakpoint-down(xxl) {
+      padding: 3rem 3rem 4rem;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: 2rem;
+    }
+  }
+
+  &__sub-title {
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+    font-size: 6.4rem;
+    font-family: $font-family-heading;
+
+    @include media-breakpoint-down(xxl) {
+      font-size: calc(1.425rem + 2.1vw)
+    }
+  }
+
+  &__group {
+    margin-bottom: 3rem;
+
+    @include media-breakpoint-up(md) {
+      max-width: 65%;
+      flex: 0 0 65%;
+      margin-right: 2.5rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__social-title {
+    font-size: 1.8rem;
+    color: color('black');
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  @include media-breakpoint-up(lg) {
+    &__container {
+      &::after {
+        background-image: image('home/feedback/letter.webp');
+        width: 417px;
+        height: 410px;
+        top: 10%;
+        @include bg-item;
+        right: 10%;
+
+        @include media-breakpoint-down(xxl) {
+          transform: scale(.8);
+          top: 5%;
+        }
+      }
+
+      &::before {
+        width: 300px;
+        height: 300px;
+        filter: blur(150px);
+        bottom: 0;
+        left: -5%;
+        z-index: 1;
+        content: '';
+        position: absolute;
+        @include gold-gradient;
+      }
+    }
+
+    &__content {
+      &:after {
+        content: image('home/feedback/bounce.svg');
+        position: absolute;
+        left: 102%;
+        top: 85%;
+      }
+    }
+
+    &__bg {
+      &-text {
+        &::after {
+          position: absolute;
+          content: image('home/feedback/text.webp');
+          right: -10%;
+          top: 20%;
+
+          @include media-breakpoint-down(xxl) {
+            transform: scale(.8);
+          }
+        }
+      }
+
+      &-items {
+        &::before {
+          right: 97%;
+          bottom: -4%;
+          position: absolute;
+          z-index: 5;
+          content: image('home/feedback/arrow.svg');
+
+          @include media-breakpoint-down(xxl) {
+            transform: scale(.6);
+          }
+        }
+      }
+    }
+  }
+}
+
+.feedback-widget {
+  padding: 3rem 2.5rem;
+  @include gold-gradient;
+  border-radius: radius('md');
+  position: relative;
+
+  @include media-breakpoint-down(xl) {
+    padding: 2rem;
+  }
+
+  &__title {
+    margin-bottom: 1.5rem;
+
+    @include media-breakpoint-down(xl) {
+      font-size: 1.8rem;
+    }
+  }
+}

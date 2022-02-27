@@ -1,0 +1,138 @@
+{# Footer #}
+<footer class="site-footer container site-footer__container" style="background: url('images/footer-bg.webp') no-repeat bottom right">
+    <div class="site-footer__top">
+        <div class="row site-footer__row gy-2">
+            <div class="col-lg-3 col-md-5">
+                <a href="/" class="site-footer__logo" aria-label="Afftimes">
+                    <img data-src="images/logo.svg" alt="" width="165" height="30" class="lazy">
+                </a>
+
+                <span class="site-footer__copyright">© 2020-2021 AffTimes.com</span>
+
+                <a href="policy.html" class="site-footer__link">Пользовательское соглашение сайта</a>
+            </div>
+            <div class="col-lg-5 col-md-7">
+                <ul class="site-footer__menu">
+                    <li>
+                        <a href="#">О портале</a>
+                    </li>
+                    <li>
+                        <a href="#">Команда</a>
+                    </li>
+                    <li>
+                        <a href="#">Обратная связь</a>
+                    </li>
+                    <li>
+                        <a href="#">Карта сайта</a>
+                    </li>
+                    <li>
+                        <a href="#">Реклама на Afftimes</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row site-footer__row gy-2">
+        <div class="col-lg-3 col-md-5">
+            {% include '../components/social.twig' with {class: 'site-footer__social'} %}
+        </div>
+        <div class="col-lg-5 col-md-7">
+            Мы — эксперты в аффилейт маркетинге и арбитраже трафика. Наша цель — делиться с сообществом кейсами,
+            мануалами и нструкциями. Пришло время лить в плюс!
+        </div>
+    </div>
+</footer>
+
+{# Float search #}
+<div class="search js-search container">
+    <form action="" class="search__form">
+        <div class="search__icon is-left">
+            {% include '../components/svg.twig' with {id: 'search', width: '20', height: '24'} %}
+        </div>
+        <label for="search" class="search__label">
+            <input class="search__input js-search__input" type="text" id="search"/>
+        </label>
+        <button type="submit" class="search__icon is-right js-search__icon">
+            {% include '../components/svg.twig' with {id: 'subscribe', width: '20', height: '24'} %}
+        </button>
+    </form>
+    <ul class="search__results js-search__results">
+        <li><a href="#">Человек-почему бы и нет</a></li>
+        <li><a href="#">Человек-привет как дела почему не видел тебя на работе</a></li>
+        <li><a href="#">Человек-потому что и да</a></li>
+        <li><a href="#">Человек-потому что и еще что то ну</a></li>
+    </ul>
+</div>
+
+{# Float reklam #}
+<div class="float-popup js-float-popup">
+    <div class="float-popup__close js-float-popup__close">
+        <svg viewBox="0 0 25 25" width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg" id="close-icon">
+            <rect x="2.82861" width="31" height="4" transform="rotate(45 2.82861 0)"></rect>
+            <rect y="21.9204" width="31" height="4" transform="rotate(-45 0 21.9204)"></rect>
+        </svg>
+    </div>
+    <div class="float-popup__top">
+        <img data-src="https://picsum.photos/116/116?random=1" width="58" height="58" alt="" class="float-popup__image lazy" >
+        <div class="title float-popup__title">Платный марафон по питерским стандартам!</div>
+    </div>
+    <p class="text float-popup__text">
+        CPA-сеть, работающая с гэмблингом, беттингом, дейтингом, адалтом, бинарными опционами.
+    </p>
+
+    <a href="#" class="btn btn--gold-border btn--size-lg">Начать марафон</a>
+</div>
+
+{# Blocker #}
+<div class="blocker js-blocker"></div>
+
+{# Modals #}
+{% include '../modals/user.twig' %}
+
+{# Container width #}
+<div class="js-container"></div>
+
+{# Toast #}
+<div role="alert" aria-live="assertive" aria-atomic="true" class="toast js-toast-success-copy" data-bs-autohide="false">
+    <div class="toast-body">
+        <div class="toast-header">
+            <div class="toast-icon is-success"></div>
+            <strong class="toast-title">Уведомление</strong>
+        </div>
+        Вы успешно скопировали код купона в буфере обмена!
+    </div>
+</div>
+
+{# Mobile menu #}
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <a href="/" aria-label="Afftimes">
+            <img data-src="images/logo.svg" alt="Afftimes" width="165" height="30" class="lazy"/>
+        </a>
+
+        <button type="button" class="offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close">
+            {% include '../components/svg.twig' with {id: 'close-icon', width: 20, height: 20} %}
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <nav class="offcanvas__menu">
+            <ul>
+                <li class="current-menu-item"><a href="posts.html">Статьи</a></li>
+                <li><a href="affiliates.html">Партнерки</a></li>
+                <li><a href="services.html">Сервисы</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="events.html">Конференции</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <a class="btn btn--size-md btn--purple" href="#">
+                Ваша реклама №2
+            </a>
+            <div class="mt-3">
+                {% include '../components/social.twig' %}
+            </div>
+        </div>
+    </div>
+</div>

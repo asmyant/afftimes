@@ -1,0 +1,64 @@
+.link {
+  &-dark {
+    text-decoration: none;
+    color: color('black');
+    @extend %link;
+
+    svg {
+      margin-left: 1rem;
+    }
+
+    &:hover {
+      color: color('gold-dark');
+    }
+  }
+
+  &-gray {
+    color: color('black');
+    opacity: .4;
+    @extend %link;
+
+    &:hover {
+      color: color('gold-dark');
+      opacity: 1;
+    }
+  }
+
+  &-red {
+    color: color('red');
+    @extend %link;
+
+    &:hover {
+      color: color('gold-dark');
+    }
+  }
+
+  &-purple {
+    color: color('purple');
+    font-weight: bold;
+    transition: color $transition;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-left: 1rem;
+      fill: color('purple');
+    }
+
+    &:hover, & {
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: color('gold-dark');
+
+      svg {
+        fill: color('gold-dark');
+      }
+    }
+  }
+
+  &-decoration {
+    text-decoration: underline;
+  }
+}

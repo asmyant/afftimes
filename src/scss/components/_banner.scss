@@ -1,0 +1,48 @@
+.banner-horizontal, .banner-vertical, .banner-grid {
+  display: block;
+
+  img {
+    transition: opacity $transition;
+    max-width: 100%;
+    border-radius: radius('xs');
+  }
+
+  &:hover {
+    img {
+      opacity: $opacity-image-hover;
+    }
+  }
+}
+
+.banner-horizontal {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+
+  img {
+    margin: 0 auto;
+    object-fit: cover;
+  }
+
+  picture {
+    display: block;
+    height: 95px;
+  }
+}
+
+.banner-vertical {
+  @include media-breakpoint-down(lg) {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+}
+
+.banner-grid {
+  height: 100%;
+
+  img {
+    height: 100%;
+  }
+}

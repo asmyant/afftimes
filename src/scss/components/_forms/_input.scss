@@ -1,0 +1,70 @@
+.form-input {
+  width: 100%;
+  background: color('gray');
+  height: 5rem;
+  border-radius: radius('sm');
+  transition: box-shadow $transition;
+
+  @include media-breakpoint-down(md) {
+    padding-left: 2rem;
+  }
+
+  &::placeholder {
+    color: color('gray-dark');
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &, select {
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: none;
+    padding: 0 2rem;
+    color: color('black');
+  }
+}
+
+textarea.form-input {
+  height: initial;
+  padding-top: 1.5rem;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+select, option {
+  cursor: pointer;
+}
+
+.form-select {
+  padding: 0;
+  position: relative;
+
+  &:before{
+    content: image('icons/arrow-select.svg');
+    position: absolute;
+    right: 1.5rem;
+    @extend %transform-center-y;
+  }
+
+  select {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+}

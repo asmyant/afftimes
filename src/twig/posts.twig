@@ -1,0 +1,40 @@
+{% extends 'templates/aside.twig' %}
+
+{# Заголовок #}
+{% block pageTitle %}Статьи{% endblock %}
+
+{# Хлебные крошки #}
+{% block pageBreadcrumbs %}
+    {% include 'components/breadcrumb.twig' with {
+        crumbs: [
+            { name: 'Статьи' }
+        ]
+    } %}
+{% endblock %}
+
+{# Текст страницы #}
+{% block pageText %}
+    <div class="col-lg-6">
+        <p>Saleads активно разрабатывает новые сервисы и инструменты для наших вебмастеров. Вместе с чат-ботом для
+            Телеграма мы запустили BotLand— умный сайт-бот, который поможет выбрать финансовый продукт для каждого
+            пользователя.</p>
+    </div>
+{% endblock %}
+
+{# Контент #}
+{% block pageContent %}
+    <div class="row row-cols-xl-3 row-cols-sm-2 row-cols-1 gy-3">
+        {% for i in 0..8 %}
+            <div class="col">
+                {% include 'components/post/grid.twig' with {
+                    image: 'https://picsum.photos/340/220.webp?random=' ~ i,
+                    text: 'Активное использование пуш-уведомлений позволяет арбитражникам дожимать свою аудиторию..'
+                } %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="align-center mt-4">
+        <a class="btn btn--gold-border btn--size-lg" href="#">Загрузить еще</a>
+    </div>
+{% endblock %}

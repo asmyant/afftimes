@@ -1,0 +1,25 @@
+<div class="post-inline">
+    {% if search %}
+        <div class="color-gold-dark mb-1">новость</div>
+    {% endif %}
+
+    <a href="" class="link-dark post-inline__title">
+        Как автоматизировать отправку пуш-уведомлений на iOS и Android...
+    </a>
+
+    <div class="post__bottom">
+        <div class="post__actions">
+            <a href="single-post.html#comments" class="action is-link">
+                {% include '../../components/svg.twig' with {id: 'comment', width: '14', height: '14'} %}
+                15
+            </a>
+
+            <div class="action">
+                {% include '../../components/svg.twig' with {id: 'view', width: '15', height: '10'} %}
+                331
+            </div>
+        </div>
+
+        <div class="post__date">09.11.21</div>
+    </div>
+</div>

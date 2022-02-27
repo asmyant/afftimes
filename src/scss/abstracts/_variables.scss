@@ -1,0 +1,58 @@
+$image-directory: '../images';
+
+// Grid
+$grid-breakpoints: (
+  "xs": 0,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1600px
+);
+
+// Colors
+$theme-colors: (
+  "white": #FCFCFC,
+  "gray": #F6F6F6,
+  "gray-dark": #999999,
+  "black": #222222,
+  "gold": #FEE502,
+  "gold-dark": #FEB802,
+  "purple": #6B008F,
+  "purple-dark": #C40062,
+  "red": #FF2300,
+  "text-color": #434343,
+  "green": #198754
+);
+
+// Border radius
+$border-radius: (
+  "xs": .5rem,
+  "sm": 1rem,
+  "md": 1.5rem,
+);
+
+// Container
+$container-max-widths: ();
+
+// Gutters
+$gutters: ();
+
+// Typography
+$font-family-base: 'Nunito Sans', sans-serif, Arial;
+$font-family-heading: 'Raleway', sans-serif, Arial;
+$font-size: 1.6rem;
+$font-weight: 600;
+
+// Image
+$opacity-image-hover: .8;
+
+// Transition
+$transition: .3s ease-in-out;
+
+// Z-index
+$blocker-z-index: 199;
+$float-content-z-index: 200;
+
+// Bootstrap gutter
+$grid-gutter-width: 3rem;

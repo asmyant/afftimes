@@ -1,0 +1,59 @@
+.offcanvas {
+  border: none;
+
+  &-close {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+
+  &__menu {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      font-size: 2rem;
+
+      .current-menu-item {
+        a {
+          &:before {
+            width: 100%;
+          }
+        }
+      }
+
+      a {
+        margin-bottom: 1.5rem;
+        display: inline-flex;
+        color: color('black');
+        position: relative;
+        text-decoration: none;
+
+        &:before {
+          content: '';
+          left: 0;
+          width: 0;
+          transition: width $transition;
+          height: 5px;
+          position: absolute;
+          top: 100%;
+          border-radius: 20px;
+          @include gold-gradient;
+        }
+      }
+    }
+  }
+
+  &-body {
+    padding: 2.5rem;
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &-header {
+    padding: 2.5rem;
+  }
+}

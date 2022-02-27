@@ -1,0 +1,30 @@
+<div class="affiliate">
+    <a href="single-affiliate.html" class="affiliate__thumbnail">
+        <img data-src="{{ image }}" class="lazy" alt="Конференция ALO KIEV 2021: как это было">
+    </a>
+
+    <div class="affiliate__content">
+        <div class="row affiliate__row">
+            <div class="col-lg-7">
+                Международная CPA-сеть с широким ГЕО и множеством вертикалей (финансы, игры, крипта, адалт и другие). Насчитывает более 2000 офферов, в том числе авторских.
+            </div>
+            <div class="col-lg-5">
+                <div class="affiliate__info">
+                    <a href="" class="affiliate__rating {{ active ? 'active' : '' }}">
+                        {% include '../../components/svg.twig' with {id: 'rating', width: '48', height: '52'} %}
+                        <span>4.2</span>
+                    </a>
+                    <div class="col-item">
+                        <a class="action is-link" href="single-affiliate.html#comments">
+                            {% include '../../components/svg.twig' with {id: 'comment', width: '14', height: '14'} %}
+                            15
+                        </a>
+                        <div>
+                            <a href="single-affiliate.html" class="link-purple">offerrum.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

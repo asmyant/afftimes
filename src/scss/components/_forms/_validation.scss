@@ -1,0 +1,25 @@
+.was-validated {
+  .form-input {
+    &.is-valid, &:valid {
+    }
+
+    &.is-invalid, &:invalid {
+      background: rgba(color('red'), .2);
+
+      &::placeholder, & {
+        color: color('red');
+      }
+    }
+  }
+
+  .form-error {
+    font-size: 1.4rem;
+    color: color('red');
+
+    &--float {
+      position: absolute;
+      top: 100%;
+      margin-top: 5px;
+    }
+  }
+}

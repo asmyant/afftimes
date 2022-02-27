@@ -1,0 +1,80 @@
+.btn {
+  height: 2.813rem;
+  border-radius: radius("xs");
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  font-weight: 900;
+  transition: background-color $transition, box-shadow $transition;
+  position: relative;
+
+  &[disabled] {
+    opacity: .5;
+    cursor: no-drop;
+  }
+
+  img {
+    &:first-child {
+      margin-right: 5px;
+    }
+  }
+
+  &:hover, &:focus, & {
+    text-decoration: none;
+    color: color("black");
+  }
+
+  &--gold {
+    @include gold-gradient;
+    @extend %button-focus-shadow;
+
+    &:hover {
+      @extend %gold-box-shadow;
+    }
+  }
+
+  &--white-border.btn {
+    background-color: color("gray");
+    font-weight: 800;
+
+    @extend %button-default;
+  }
+
+  &--block.btn {
+    width: 100%;
+    display: flex;
+    min-width: initial;
+  }
+
+  &--purple {
+    @include purple-gradient;
+    @extend %button-focus-shadow;
+
+    &, &:hover, &:focus {
+      color: color("white");
+    }
+
+    &:hover {
+      box-shadow: 0 .8rem 1.5rem rgba(color("purple-dark"), 0.75);
+    }
+  }
+
+  &--size-lg {
+    min-width: 24.5rem;
+    padding: 0 2rem;
+    height: 4.5rem;
+    font-size: 1.8rem;
+  }
+
+  &--size-md {
+    min-width: 17.5rem;
+    height: 3.5rem;
+  }
+
+  &--gold-border.btn {
+    @include gold-gradient;
+    @extend %button-default;
+  }
+}

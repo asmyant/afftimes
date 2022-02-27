@@ -1,0 +1,53 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    {% include '../layout/close-partner.twig' with {page: true} %}
+
+    <article class="container">
+        <div class="site-page__top-banner">
+            {% include '../components/banner/horizontal/image.twig' %}
+        </div>
+
+        <div class="site-page__head">
+            <h1 class="h2 heading-bg">
+                <span>
+                    {% block pageTitle %}{% endblock %}
+                </span>
+            </h1>
+
+            <div class="site-page__breadcrumb">
+                {% block pageBreadcrumbs %}{% endblock %}
+            </div>
+
+            {% if block("pageText") is defined %}
+                <div class="row site-page__text">
+                    {% block pageText %}{% endblock %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="row gy-3">
+            <div class="col-lg-9">
+                {% block pageContent %}{% endblock %}
+            </div>
+            <div class="col-lg-3 sticky">
+                <aside class="sticky__content gy-3">
+                    <div class="col-item">
+                        <div class="h3">Самые читаемые статьи</div>
+
+                        <div class="mt-2 gy-2">
+                            <div>{% include '../components/post/inline.twig' %}</div>
+                            <div>{% include '../components/post/inline.twig' %}</div>
+                            <div>{% include '../components/post/inline.twig' %}</div>
+                        </div>
+                    </div>
+                    {% include '../components/banner/vertical/image.twig' %}
+                    {% include '../components/social-widget.twig' %}
+                </aside>
+            </div>
+        </div>
+
+        {% block pageBottomContent %}
+        {% endblock pageBottomContent %}
+    </article>
+{% endblock %}

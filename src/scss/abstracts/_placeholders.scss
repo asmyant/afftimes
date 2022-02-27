@@ -1,0 +1,66 @@
+@use "../abstracts/functions" as func;
+
+%list-null {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+%flex-center-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%transform-center-xy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%transform-center-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+%transform-center-y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+%button-focus-shadow {
+  &:focus {
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+%button-default {
+  border-bottom: 5px solid func.color("black");
+  border-top: 5px solid transparent;
+
+  &:hover {
+    background: func.color("black");
+    color: func.color("white");
+    border: none;
+  }
+
+  &:focus {
+    background: func.color("black");
+    color: func.color("gold-dark");
+    border: none;
+  }
+}
+
+%link {
+  &, &:hover {
+    text-decoration: none;
+    transition: opacity $transition, color $transition;
+  }
+}
+
+%gold-box-shadow {
+  box-shadow: 0 .5rem 1rem rgba(color("gold-dark"), 0.75);
+}

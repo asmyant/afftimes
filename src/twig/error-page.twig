@@ -1,0 +1,23 @@
+{% extends 'templates/error.twig' %}
+
+{% block content %}
+
+    <div class="error-page">
+        <div class="error-page__container container">
+            <div class="error-page__content">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="Afftimes" width="251">
+                </a>
+                <h1 class="h2 error-page__title"><span>404</span></h1>
+                <div class="error-page__social">
+                    <span>Наши соц. сети</span>
+                    {% include 'components/social.twig' %}
+                </div>
+                <div class="mt-2">
+                    <a href="index.html" class="btn btn--size-lg btn--gold-border">Вернуться на главную</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

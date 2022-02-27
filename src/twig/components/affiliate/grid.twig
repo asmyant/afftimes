@@ -1,0 +1,41 @@
+<div class="affiliate-grid">
+
+    {% if active %}
+        <div class="affiliate-grid__rating">
+            {% include '../../components/svg.twig' with {id: 'star-2'} %}
+            {% include '../../components/svg.twig' with {id: 'star-2'} %}
+            {% include '../../components/svg.twig' with {id: 'star-2'} %}
+            {% include '../../components/svg.twig' with {id: 'star-2'} %}
+            {% include '../../components/svg.twig' with {id: 'star-2'} %}
+        </div>
+    {% endif %}
+
+    <a href="single-affiliate.html" class="affiliate-grid__thumbnail" aria-label="CTR 10%">
+        <img data-src="https://protraffic.com/wp-content/uploads/2020/11/bemob.png" class="lazy" alt="" width="150" height="60">
+    </a>
+    <div class="affiliate-grid__content {{ active ? 'active' : '' }}">
+
+        <div class="affiliate-grid__info">
+            <div class="affiliate-grid__action">
+                <a href="single-post.html#comments" class="action is-link">
+                    {% include '../../components/svg.twig' with {id: 'comment', width: '14', height: '14'} %}
+                    15
+                </a>
+
+                <div class="action affiliate-grid__star">
+                    {% include '../../components/svg.twig' with {id: 'star', width: '15', height: '15'} %}
+                    331
+                </div>
+            </div>
+
+            <a href="" class="link-purple">clicklead.ru/</a>
+        </div>
+
+        <p>Мультивертикальная CPA-сеть, работающая с беттингом, финансами, дейтингом, нутрой и др. Имеют более 1000 офферов в 40 странах мира. Партнерам доступны: повышенные отчисления и досрочные выплаты, приложения собственной разработки, бонусы за каждые лиды.</p>
+    </div>
+</div>
+
+<a href="" class="affiliate-grid__link link-dark">
+    <b>читать обзор</b>
+    {% include '../../components/svg.twig' with {id: 'arrow-right', width: 14, height: 14} %}
+</a>

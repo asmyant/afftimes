@@ -1,0 +1,66 @@
+.float-popup {
+  position: fixed;
+  bottom: 3rem;
+  left: 3rem;
+  z-index: $float-content-z-index;
+  max-width: 48rem;
+  background: color("white");
+  color: color("black");
+  transform: translateX(-150%);
+  transition: transform .3s;
+  padding: 2.5rem 3.5rem;
+  border-radius: radius('md');
+
+  @include media-breakpoint-down(md) {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem;
+    transform: translateX(-100%);
+  }
+
+  &.show {
+    box-shadow: 0 1.5rem 3.5rem rgba(color('gold-dark'), 0.25);
+    transform: none;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-left: 2rem;
+    line-height: 120%;
+  }
+
+  &__image {
+    width: 5.8rem;
+    height: 5.8rem;
+    border-radius: radius('sm');
+  }
+
+  &__text {
+    margin: 1.5rem 0;
+  }
+
+  &__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    svg{
+      fill: color("black");
+    }
+  }
+
+  &__top{
+    display: flex;
+    align-items: center;
+  }
+}

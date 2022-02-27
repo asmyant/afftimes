@@ -1,0 +1,19 @@
+.single-service {
+  &__top {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__sale {
+    max-width: 300px;
+    width: 100%;
+
+    @include media-breakpoint-down(md) {
+      margin-top: 2rem;
+      max-width: 100%;
+    }
+  }
+}

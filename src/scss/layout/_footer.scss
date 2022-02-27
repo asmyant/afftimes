@@ -1,0 +1,63 @@
+.site-footer {
+  &__container {
+    padding-top: 12.5rem;
+    padding-bottom: 4.5rem;
+    background: image('footer-bg.webp') no-repeat bottom right;
+
+    @include media-breakpoint-down(md) {
+      background: none !important;
+      padding-top: 8rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  &__link, &__copyright {
+    color: color('black');
+    opacity: .7;
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+    transition: opacity $transition, color $transition;
+  }
+
+  &__row {
+    align-items: center;
+  }
+
+  &__link {
+    &:hover {
+      color: color('gold-dark');
+      opacity: 1;
+    }
+  }
+
+  &__menu {
+    columns: 3;
+    @extend %list-null;
+
+    @include media-breakpoint-down(sm) {
+      columns: 2;
+    }
+
+    a {
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 185%;
+      text-decoration: none;
+      color: color('black');
+
+      &:hover {
+        color: color('gold-dark');
+      }
+    }
+  }
+
+  &__top {
+    margin-bottom: 1.5rem;
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,47 @@
+{% extends 'templates/page.twig' %}
+
+{# Заголовок #}
+{% block pageTitle %}Наши видео{% endblock %}
+
+{# Хлебные крошки #}
+{% block pageBreadcrumbs %}
+    {% include 'components/breadcrumb.twig' with {
+        crumbs: [
+            { name: 'Наши видео' }
+        ]
+    } %}
+{% endblock %}
+
+{# Текст страницы #}
+{% block pageText %}
+    <div class="col-lg-6">
+        <p>Saleads активно разрабатывает новые сервисы и инструменты для наших вебмастеров. Вместе с чат-ботом для
+            Телеграма мы запустили BotLand— умный сайт-бот, который поможет выбрать финансовый продукт для каждого
+            пользователя.</p>
+    </div>
+    <div class="col-lg-6">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat dignissim tellus in.
+            Posuere consequat purus dis orci, quisque. Viverra cras at neque mi mauris fermentum. Fringilla ut nisl
+            duis gravida lacus. Quam dignissim ac at eleifend imperdiet sagittis gravida tellus.
+        </p>
+    </div>
+{% endblock %}
+
+{# Контент #}
+{% block pageContent %}
+    <div class="row row-cols-lg-4 row-cols-sm-2 row-cols-1 gy-3">
+        {% for i in 0..7 %}
+            <div class="col">
+                {% include 'components/video.twig' with {image: i} %}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="align-center mt-4">
+        <a class="btn btn--gold-border btn--size-lg" href="#">Показать еще</a>
+    </div>
+
+    <div class="site-page__bottom-banner">
+        {% include 'components/banner/horizontal/image.twig' %}
+    </div>
+{% endblock %}

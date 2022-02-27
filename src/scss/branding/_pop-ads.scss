@@ -1,0 +1,155 @@
+$bg-color: #F6F6F6;
+$red: #FF3C32;
+$border-color: #DDE2EB;
+$blue: #3200FF;
+$img-dir: 'close-partner/pop-ads/';
+
+// Pop Ads
+.pop-ads {
+  font-family: 'Montserrat', sans-serif;
+  color: #333333;
+  position: relative;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  &:before {
+    background-color: $bg-color;
+  }
+
+  .col {
+    &:not(:last-child) {
+      border-right: 1px solid $border-color;
+    }
+
+    @include media-breakpoint-down(md) {
+      &:nth-child(2) {
+        border-right: none;
+      }
+    }
+  }
+
+  .branding {
+    &__row {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__icon {
+      height: 7.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include media-breakpoint-down(md) {
+        img {
+          width: 4rem;
+        }
+      }
+    }
+
+    &__bottom {
+      padding-top: 2rem;
+      flex-wrap: wrap;
+
+      @include media-breakpoint-down(lg) {
+        justify-content: center;
+      }
+
+      @include media-breakpoint-up(md) {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &__button {
+      height: 6rem;
+      padding: 0 2.6rem;
+      background: $blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: .5rem;
+      color: #FFFFFF !important;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.8rem;
+      text-decoration: none;
+      transition: $transition transform;
+
+      @include media-breakpoint-down(md) {
+        height: 4.5rem;
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        margin-right: 3rem;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    &__title {
+      font-weight: 900;
+      font-size: 6.7rem;
+      line-height: 100%;
+      text-transform: initial;
+
+      @include media-breakpoint-down(xxl) {
+        font-size: calc(3rem + 2.1vw);
+      }
+
+      span {
+        color: $red;
+      }
+    }
+
+    &__center {
+      flex-grow: 1;
+    }
+
+    &__container {
+      height: 100%;
+      position: relative;
+
+      @include media-breakpoint-up(xl) {
+        &:before {
+          content: image($img-dir + 'bg.svg');
+          position: absolute;
+          top: -11%;
+          left: 35%;
+          z-index: 3;
+
+          @include media-breakpoint-down(xxl) {
+            top: -20%;
+            transform: scale(.8);
+          }
+        }
+      }
+    }
+
+    &__list {
+      margin: 5rem 0;
+      font-size: 1.5rem;
+      text-align: center;
+
+      @include media-breakpoint-down(xl) {
+        margin: 2rem 0;
+      }
+
+      span {
+        font-size: 1.8rem;
+        line-height: 170%;
+        font-weight: 900;
+        display: block;
+
+        @include media-breakpoint-down(md) {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{% extends 'templates/page.twig' %}
+
+{# Заголовок #}
+{% block pageTitle %}Партнерки{% endblock %}
+
+{# Хлебные крошки #}
+{% block pageBreadcrumbs %}
+    {% include 'components/breadcrumb.twig' with {
+        crumbs: [
+            { name: 'Партнерки' }
+        ]
+    } %}
+{% endblock %}
+
+{# Текст страницы #}
+{% block pageText %}
+    <div class="col-lg-7">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat dignissim tellus in. Posuere
+            consequat purus dis orci, quisque. Viverra cras at neque mi mauris fermentum. Fringilla ut nisl duis gravida
+            lacus. Quam dignissim ac at eleifend imperdiet sagittis gravida tellus. </p>
+    </div>
+    <div class="col-lg-5">
+        Egestas quam neque, vitae enim consequat cras. Turpis senectus egestas purus augue. Sollicitudin faucibus
+        tincidunt a purus feugiat elit diam diam justo.
+    </div>
+{% endblock %}
+
+{# Контент #}
+{% block pageContent %}
+    {% for i in 0..2 %}
+        <section class="{{ i == 0 ? '' : "section-archive" }}">
+            <div class="section-archive__head  mb-3 gy-2">
+                <div>
+                    <h2 class="h3">Беттинг</h2>
+                </div>
+
+                {% if i == 0 %}
+                <div class="section-archive__head-filters gx-1 gy-1">
+                    <div>
+                        <b>Фильтры</b>
+                    </div>
+                    <div>
+                        <div class="form-select form-input">
+                            <select>
+                                <option value="">Все ГЕО</option>
+                                <option value="">Испания, Барселона</option>
+                                <option value="">Испания, Барселона</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-select form-input">
+                            <select>
+                                <option value="">Все Источники</option>
+                                <option value="">Испания, Барселона</option>
+                                <option value="">Испания, Барселона</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-3">
+                {% for i in 0..2 %}
+                    <div class="col">
+                        {% include 'components/affiliate/grid.twig' with {
+                            active: i == 0
+                        } %}
+                    </div>
+                {% endfor %}
+
+                <div class="col site-page__grid-link">
+                    <a href="affiliates-single-archive.html" class="h4 link-purple">
+                        Показать больше
+                        {% include 'components/svg.twig' with {id: 'arrow-right', width: 22, height: 22} %}
+                    </a>
+                </div>
+            </div>
+
+            <div class="align-center mt-3">
+                <a href="affiliates-single-archive.html" class="btn btn--gold-border btn--size-lg">Показать все Гемблинг</a>
+            </div>
+        </section>
+    {% endfor %}
+
+    <div class="site-page__bottom-banner">
+        {% include 'components/banner/horizontal/image.twig' %}
+    </div>
+{% endblock %}

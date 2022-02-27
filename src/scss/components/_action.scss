@@ -1,0 +1,29 @@
+.action {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.6rem;
+
+  &.is-link {
+    color: color('black');
+
+    &:hover {
+      color: color('gold-dark');
+
+      svg {
+        fill: color('gold-dark');
+      }
+    }
+  }
+
+  &--star {
+    svg {
+      fill: color('gold-dark');
+    }
+  }
+
+  svg {
+    margin-right: .8rem;
+  }
+}

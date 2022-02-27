@@ -1,0 +1,101 @@
+{% extends 'templates/page.twig' %}
+
+{# Заголовок #}
+{% block pageTitle %}Конференции{% endblock %}
+
+{# Хлебные крошки #}
+{% block pageBreadcrumbs %}
+    {% include 'components/breadcrumb.twig' with {
+        crumbs: [
+            { name: 'Конференции' }
+        ]
+    } %}
+{% endblock %}
+
+{# Текст страницы #}
+{% block pageText %}
+    <div class="col-lg-7">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat dignissim tellus in. Posuere consequat purus dis orci, quisque. Viverra cras at neque mi mauris fermentum. Fringilla ut nisl duis gravida lacus. Quam dignissim ac at eleifend imperdiet sagittis gravida tellus. </p>
+    </div>
+    <div class="col-lg-5">
+        <p>Egestas quam neque, vitae enim consequat cras. Turpis senectus egestas purus augue. Sollicitudin faucibus tincidunt a purus feugiat elit diam diam justo.</p>
+    </div>
+{% endblock %}
+
+{# Контент #}
+{% block pageContent %}
+    <form class="site-page__filters" action="">
+        <div class="site-page__filters-row row gx-1 gy-2">
+            <div class="col-xl-3 col-md-3 col-sm-6">
+                <div class="form-select form-input">
+                    <select>
+                        <option value="">Формат проведения</option>
+                        <option value="">Испания, Барселона</option>
+                        <option value="">Испания, Барселона</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-3 col-sm-6">
+                <div class="form-select form-input">
+                    <select>
+                        <option value="">Страна</option>
+                        <option value="">Испания, Барселона</option>
+                        <option value="">Испания, Барселона</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-3 col-sm-6">
+                <div class="form-select form-input">
+                    <select>
+                        <option value="">Город</option>
+                        <option value="">Испания, Барселона</option>
+                        <option value="">Испания, Барселона</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-3 col-sm-6">
+                <div class="form-select form-input">
+                    <select>
+                        <option value="">Категория</option>
+                        <option value="">Испания, Барселона</option>
+                        <option value="">Испания, Барселона</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xl-3 align-right">
+                <button type="submit" class="btn btn--gold-border btn--size-lg">Добавить мероприятие</button>
+            </div>
+        </div>
+    </form>
+
+    {% for i in 0..2 %}
+        <section class="{{ i == 0 ? '' : "section-archive" }}">
+            <div class="section-archive__head">
+                <h2 class="h3 mb-3 color-gold-dark">Октябрь, 2021</h2>
+            </div>
+
+            <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-3">
+                {% for i in 0..2 %}
+                    <div class="col">
+                        {% include 'components/event.twig' with {
+                            image: 'https://picsum.photos/340/220.webp?random=' ~ {{ i }},
+                            end: false
+                        } %}
+                    </div>
+                    <div class="col">
+                        {% include 'components/event.twig' with {
+                            image: 'https://picsum.photos/340/220.webp?random=' ~ {{ i }},
+                            end: true
+                        } %}
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        {% if i != 2 %}
+        <div class="site-page__center-banner">
+            {% include 'components/banner/horizontal/image.twig' %}
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,160 @@
+@include media-breakpoint-up(lg) {
+  // Главная страница
+  .index {
+    // ️Самые читаемые статьи
+    &-popular {
+      &__container {
+        &::before {
+          content: image('home/popular-posts/image.webp');
+          right: -20%;
+          bottom: -30%;
+          position: absolute;
+
+          @include media-breakpoint-down(xxl) {
+            transform: scale(.6);
+          }
+        }
+      }
+
+      &__bg-item {
+        &::after {
+          position: absolute;
+          content: image('home/popular-posts/text.webp');
+          top: 85%;
+          left: -10%;
+
+          @include media-breakpoint-down(xxl) {
+            transform: scale(.8);
+          }
+        }
+
+        &::before {
+          content: image('home/popular-posts/arrow.svg');
+          bottom: 0;
+          left: -15%;
+          position: absolute;
+
+          @include media-breakpoint-down(xxl) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    // Последние статьи
+    &-posts {
+      .container {
+        &::before {
+          right: -17%;
+          bottom: -30%;
+          position: absolute;
+          content: image('home/posts/bg.webp');
+
+          @include media-breakpoint-down(xxl) {
+            transform: scale(.7);
+            bottom: -40%;
+          }
+        }
+      }
+    }
+
+    // Топ партнерских программ
+    &-affiliate {
+      &__wrapper {
+        &::after {
+          content: image('home/partnerships/text.webp');
+          position: absolute;
+          top: 15%;
+          left: 90%;
+
+          @include media-breakpoint-down(xxl) {
+            transform: scale(.8);
+          }
+        }
+
+        &::before {
+          content: image('home/partnerships/letter.webp');
+          top: 3%;
+          left: 90%;
+          position: absolute;
+
+          @include media-breakpoint-down(xxl) {
+            transform: scale(.5);
+            top: 10%;
+          }
+        }
+      }
+
+      &__bg {
+        &::after {
+          content: image('home/partnerships/sign.svg');
+          position: absolute;
+          right: 105%;
+          top: 10%;
+
+          @include media-breakpoint-down(xxl) {
+            right: 100%;
+            transform: scale(.7);
+          }
+        }
+
+        &::before {
+          position: absolute;
+          right: 100%;
+          bottom: 0;
+          content: image('home/partnerships/person.webp');
+
+          @include media-breakpoint-down(xxl) {
+            transform: scale(.7);
+            right: 85%;
+            bottom: -4%;
+          }
+        }
+      }
+    }
+
+    // Топ сервисов для арбитража
+    &-services {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: 40%;
+        left: -25%;
+        content: image('home/services/text.webp');
+
+        @include media-breakpoint-down(xxl) {
+          transform: scale(.8);
+        }
+      }
+
+      &::after {
+        content: image('home/services/bounce.svg');
+        position: absolute;
+        right: 100%;
+        bottom: 0;
+      }
+
+      &__bg {
+        &::after {
+          position: absolute;
+          content: image('home/services/bg.webp');
+          top: -9%;
+          left: 87%;
+        }
+
+        &::before {
+          position: absolute;
+          content: image('home/services/person.webp');
+          z-index: 2;
+          top: -15%;
+          left: 92%;
+        }
+
+        @include media-breakpoint-down(xxl) {
+          display: none;
+        }
+      }
+    }
+  }
+}

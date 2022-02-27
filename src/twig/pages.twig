@@ -1,0 +1,90 @@
+{% extends 'templates/page.twig' %}
+
+{# Заголовок #}
+{% block pageTitle %}ДЕЛО{% endblock %}
+
+{# Хлебные крошки #}
+{% block pageBreadcrumbs %}
+    {% include 'components/breadcrumb.twig' with {
+        crumbs: [
+            { name: 'спиок страниц' },
+        ]
+    } %}
+{% endblock %}
+
+{% block pageContent %}
+    <div class="text-content">
+        <ol>
+            <li>
+                <a href="index.html">Главная страница</a>
+            </li>
+            <li>
+                <a href="policy.html">Пользовательское соглашение сайта</a>
+            </li>
+            <li>
+                <a href="posts.html">Статьи</a>
+
+                <ol>
+                    <li>
+                        <a href="single-post.html">Статья</a>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="affiliates.html">Партнерки</a>
+                <ol>
+                    <li>
+                        <a href="single-affiliate.html">Партнерка</a>
+                    </li>
+                    <li>
+                        <a href="affiliates-single-archive.html">Партнерка</a>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="services.html">Сервисы</a>
+                <ol>
+                    <li>
+                        <a href="services-single-archive.html">Архив</a>
+                    </li>
+                    <li>
+                        <a href="single-service.html">Сервис</a>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="news.html">Новости</a>
+                <ol>
+                    <li>
+                        <a href="single-news.html">Новость</a>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="events.html">Конференции</a>
+                <ol>
+                    <li>
+                        <a href="single-event.html">Конференция</a>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="videos.html">Видео</a>
+            </li>
+            <li>
+                <a href="author-page.html">Автор</a>
+                <ol>
+                    <li>
+                        <a href="author-edit.html">Редактирование</a>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="search-results.html">Результаты поиска</a>
+            </li>
+            <li>
+                <a href="error-page.html">Страница ошибки</a>
+            </li>
+        </ol>
+    </div>
+{% endblock %}

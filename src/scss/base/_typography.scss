@@ -1,0 +1,181 @@
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-family-heading;
+  font-weight: 800;
+  line-height: 120%;
+  margin: 0;
+}
+
+.h2 {
+  font-size: 4.8rem;
+  line-height: 110%;
+
+  @include media-breakpoint-down(xl) {
+    font-size: calc(1.8rem + 2.1vw);
+  }
+}
+
+.h3 {
+  font-size: 3.5rem;
+
+  @include media-breakpoint-down(xl) {
+    font-size: calc(1.6rem + 1.8vw);
+  }
+}
+
+.h4 {
+  font-size: 2.4rem;
+
+  @include media-breakpoint-down(md) {
+    font-size: 2rem;
+  }
+}
+
+.heading-bg {
+  position: relative;
+  display: inline-block;
+  border-bottom: 4px solid color('gold-dark');
+
+  @include media-breakpoint-up(md) {
+    border: none;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      right: -10px;
+      bottom: 4px;
+      top: 18px;
+      background: color('gold-dark')
+    }
+
+    &--white {
+      &:before {
+        background: color("white");
+      }
+    }
+
+    & > span {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+a {
+  transition: color $transition;
+}
+
+svg {
+  transition: fill $transition;
+}
+
+.text-right {
+  text-align: right;
+}
+
+small {
+  font-size: 1.4rem;
+}
+
+.text-content {
+  line-height: 155%;
+  font-size: 1.8rem;
+
+  @include media-breakpoint-down(xxl) {
+    font-size: 1.6rem;
+  }
+
+  & > {
+    p {
+      color: color('text-color');
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+
+      @include media-breakpoint-down(md) {
+        font-size: 2.4rem;
+      }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 2rem;
+      font-weight: 800;
+      margin-top: 1rem;
+    }
+
+    & > *:last-child {
+      margin: 0;
+    }
+
+    p, ol, ul, table {
+      a {
+        color: color('gold-dark');
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    figure {
+      margin-bottom: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+
+      img {
+        transition: opacity $transition;
+        max-width: 100%;
+        height: auto;
+      }
+
+      &:hover {
+        img {
+          opacity: $opacity-image-hover;
+        }
+      }
+
+      figcaption {
+        color: color('gray-dark');
+        font-size: 1.4rem;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+    }
+
+    img {
+      border-radius: radius('xs');
+    }
+
+    ol, ul {
+      margin-bottom: 3.5rem;
+      margin-left: 2.5rem;
+
+      ol, ul {
+        margin-top: 1rem;
+      }
+
+      @include media-breakpoint-down(md) {
+        margin-left: 1rem;
+      }
+
+      li:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.text-opacity {
+  color: color('black');
+  opacity: .4;
+}
+
+b {
+  font-weight: 700;
+}
+
+p {
+  color: color('text-color');
+}

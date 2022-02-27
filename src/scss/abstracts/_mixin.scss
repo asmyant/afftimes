@@ -1,0 +1,15 @@
+@mixin gold-gradient() {
+  background: linear-gradient(87.69deg, color("gold-dark") -1.99%, color("gold") 105.12%);
+  background: -webkit-gradient(linear, right top, left top, from(color("gold-dark")), to(color("gold")));
+}
+
+@mixin purple-gradient() {
+  background: linear-gradient(51.02deg, color("purple") -1.83%, color("purple-dark") 115.39%);
+  background: -webkit-gradient(linear, right top, left top, from(color("purple")), to(color("purple-dark")));
+}
+
+@mixin bg-item{
+  position: absolute;
+  content: '';
+  background-repeat: no-repeat;
+}

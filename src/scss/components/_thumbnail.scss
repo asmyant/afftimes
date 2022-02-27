@@ -1,0 +1,20 @@
+.thumbnail {
+  object-fit: cover;
+
+  &.link {
+    transition: opacity $transition;
+
+    &:hover {
+      opacity: $opacity-image-hover;
+    }
+  }
+
+  &--lg {
+    width: 7.2rem;
+    height: 7.2rem;
+  }
+
+  &--round {
+    border-radius: 50%;
+  }
+}

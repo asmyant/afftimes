@@ -1,0 +1,28 @@
+.blockquote-fire.gutenberg {
+  border-radius: radius('sm');
+  padding: 2.5rem 4.5rem 2.5rem 10rem;
+  margin-bottom: 2.5rem;
+  background-color: color('gray') ;
+  background-repeat: no-repeat;
+  background-position: 30px center;
+
+  @include media-breakpoint-down(md) {
+    padding: 2rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    background-image: image('icons/fire-big.png');
+  }
+
+  .blockquote-fire {
+    &__title {
+      font-family: $font-family-heading;
+      font-weight: 700;
+      line-height: 120%;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 2.1rem;
+      }
+    }
+  }
+}

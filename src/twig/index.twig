@@ -1,0 +1,225 @@
+{% extends 'templates/base.twig' %}
+
+{% block bodyClass %}index{% endblock %}
+
+{% block content %}
+    {% include 'layout/close-partner.twig' %}
+
+    {# ️Самые читаемые статьи #}
+    <section class="container index-popular__container js-container">
+        <h2 class="h2 heading-bg section__head">
+            <span>️Самые читаемые статьи</span>
+        </h2>
+        <div class="row index-popular__wrapper gy-3">
+            <div class="col-lg-9">
+                <div class="row index-popular__row gy-2">
+                    <div class="col-lg-7 col-md-6 index-popular__lg">
+                        {% include 'components/post/grid-lg.twig' with {
+                            image: 'https://picsum.photos/900/700.webp?random=3'
+                        } %}
+                    </div>
+                    <div class="col-lg-5 col-md-6">
+                        <div class="row index-popular__sm-list index-popular__row">
+                            <div class="col-md-12 col-sm-6">
+                                {% include 'components/post/grid.twig' with {
+                                    image: 'https://picsum.photos/600/500.webp?random=4'
+                                } %}
+                            </div>
+                            <div class="col-md-12 col-sm-6">
+                                {% include 'components/post/grid.twig' with {
+                                    image: 'https://picsum.photos/600/500.webp?random=7'
+                                } %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="col-lg-3">
+                {% include 'components/banner/vertical/image.twig' %}
+            </aside>
+        </div>
+        <div class="index-popular__bg-item"></div>
+    </section>
+
+    {# Баннер #}
+    {% include 'components/banner/horizontal/image.twig' with {class: 'container index-horizontal-banner'} %}
+
+    {# Последние статьи #}
+    <section class="index-posts container">
+        <div class="index-posts__wrapper">
+            <h2 class="h2 heading-bg section__head">
+                <span>Последние статьи</span>
+            </h2>
+
+            <div class="index-mobile-row row row-cols-3 gy-3">
+                {% for i in 0..5 %}
+                    {% if i != 1 %}
+                        <div class="col">
+                            {% include 'components/post/grid.twig' with {
+                                image: 'https://picsum.photos/600/500.webp?random=' ~ i
+                            } %}
+                        </div>
+                    {% else %}
+                        <div class="col index-posts__banner">
+                            <a href="" class="banner-grid">
+                                <img data-src="images/gambling-days.png" class="lazy" alt="" width="435" height="350">
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="align-center mt-3">
+                <a class="btn btn--gold-border btn--size-lg" href="posts.html">Показать все статьи</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="index-select js-index-select">
+        <div class="container">
+            <div class="index-select__input">
+                <div>
+                    <img src="images/author/placeholder.svg" alt="" width="23" height="23">
+                    Как жить дальше?
+                </div>
+
+                <a href="#" class="js-index-select__hide">
+                    {% include 'components/svg.twig' with {id: 'close-icon', width: '11', height: '11'} %}
+                </a>
+            </div>
+
+            <div class="index-select__text">Верстать странички и...</div>
+        </div>
+    </div>
+
+    {# Видео-контент по арбитражу #}
+    <section class="index-videos">
+        <div class="container">
+            <div class="h2 heading-bg section__head"><span>Видео-контент по арбитражу</span></div>
+        </div>
+
+        <div class="swiper js-home-videos">
+            <div class="swiper-wrapper js-container__left">
+                {% for i in 0..5 %}
+                    <div class="swiper-slide">
+                        {% include 'components/video.twig' with {image: i, slider: true} %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row index-videos__bottom">
+                <div class="col-xl-6 col-lg-7 index-videos__controls">
+                    <div class="index-videos__arrows">
+                        <a href="#" class="js-home-videos__next">
+                            {% include 'components/svg.twig' with {id: 'left', width: 12, height: 22} %}
+                        </a>
+                        <span>листайте</span>
+                        <a href="#" class="js-home-videos__prev">
+                            {% include 'components/svg.twig' with {id: 'right', width: 12, height: 22} %}
+                        </a>
+                    </div>
+                    <a href="videos.html" class="h4 link-dark">
+                        Показать больше
+                        {% include 'components/svg.twig' with {id: 'arrow-right', width: 22, height: 22} %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# Подписывайтесь #}
+    <section class="container subscribe__container">
+        <div class="subscribe__wrapper">
+            <div class="subscribe__title">подписывайтесь</div>
+            <div class="subscribe__content">
+                <h2 class="subscribe__sub-title">Присоединяйтесь к нам</h2>
+                <div class="row subscribe__row gy-2">
+                    <div class="col-lg-7">
+                        <form class="subscribe__form js-subscribe-form" action="" novalidate>
+                            <div class="form-group subscribe__group">
+                                <input class="subscribe__input" type="email" required="required"
+                                       placeholder="Введите свою почту" name="subscribe" id="subscribe"/>
+                                <div class="invalid-feedback form-error form-error--float">
+                                    Необходимо ввести валидный E-mail
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn--white-border btn--size-lg btn--block js-spinner">
+                                <div class="spinner-border text-light js-spinner__item none" role="status"></div>
+                                <span class="js-spinner__text">подписаться</span>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-lg-4">
+                        <span class="subscribe__social-title">Наши соц. сети</span>
+                        {% include 'components/social.twig' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="subscribe__bg-items"></div>
+        <div class="subscribe__bg-text"></div>
+    </section>
+
+    {# Топ партнерских программ #}
+    <section class="index-affiliate">
+        <div class=" container index-affiliate__wrapper">
+            <h2 class="h2 heading-bg heading-bg--white section__head">
+                <span>Топ партнерских программ</span>
+            </h2>
+
+            <div class="row index-mobile-row row-cols-lg-1 gy-2">
+                {% for i in 0..5 %}
+                    <div class="col affiliate__col">
+                        {% include 'components/affiliate/tr.twig' with {
+                            image: 'https://picsum.photos/500/500.webp?random=' ~ i,
+                            active: i == 0
+                        } %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="align-center mt-3">
+                <a href="affiliates.html" class="btn btn--white-border btn--size-lg">Каталог ПП</a>
+            </div>
+
+            <div class="index-affiliate__banner">
+                {% include 'components/banner/horizontal/image.twig' %}
+            </div>
+
+            <div class="index-affiliate__bg"></div>
+        </div>
+    </section>
+
+    {# Топ сервисов для арбитража #}
+    <section class="index-services container">
+        <h2 class="h2 heading-bg section__head"><span>Топ сервисов для арбитража</span></h2>
+
+        <div class="row gy-3 index-services__row">
+            <div class="col-lg-9">
+                <div class="row index-mobile-row row-cols-lg-3 row-cols-2 gy-5">
+                    {% for i in 0..8 %}
+                        <div class="col">
+                            {% include 'components/services/type-1.twig' %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="index-services__button">
+                    <a href="services.html" class="btn btn--gold-border btn--size-lg">Каталог сервисов</a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <aside class="index-services__aside gy-3">
+                    {% include 'components/banner/vertical/image.twig' %}
+                    {% include 'components/social-widget.twig' %}
+                </aside>
+            </div>
+        </div>
+
+        <div class="index-services__bg"></div>
+    </section>
+
+{% endblock %}

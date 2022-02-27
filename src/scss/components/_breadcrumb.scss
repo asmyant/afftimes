@@ -1,0 +1,40 @@
+.breadcrumb {
+  @extend %list-null;
+  display: flex;
+  text-transform: lowercase;
+  font-weight: 700;
+  flex-wrap: wrap;
+
+  li {
+    margin-right: 1rem;
+
+    &:not(:last-child) {
+      a {
+        opacity: .2;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &:not(:first-child) {
+      &:before {
+        content: '/';
+        padding-right: .6rem;
+        color: color('black');
+      }
+    }
+  }
+
+  a {
+    color: color('black');
+    text-decoration: none;
+    transition: opacity $transition, color $transition;
+
+    &:hover {
+      opacity: 1 !important;
+      color: color('gold-dark');
+    }
+  }
+}

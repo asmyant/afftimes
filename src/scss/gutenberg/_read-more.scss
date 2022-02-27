@@ -1,0 +1,99 @@
+.gutenberg.read-more {
+  margin-bottom: 3.5rem;
+
+  @include media-breakpoint-up(md) {
+    padding: 5rem 0 3.5rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin: 2rem 0;
+    background: color('gray');
+    padding: 1.5rem;
+    border-radius: radius('sm');
+  }
+
+  @include media-breakpoint-up(md) {
+    &:before {
+      content: '';
+      width: 90%;
+      right: 0;
+      transform: rotate(-1deg);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background-color: color('gray');
+      transition: $transition;
+    }
+  }
+
+  &:hover {
+    &:before{
+      width: 95%;
+      transform: rotate(0);
+    }
+
+    .read-more {
+      &__title {
+        color: color('gold-dark');
+      }
+
+      &__thumbnail {
+        opacity: $opacity-image-hover;
+      }
+    }
+  }
+
+  .read-more {
+    &__thumbnail {
+      display: block;
+      transition: opacity $transition;
+
+      img {
+        border-radius: radius('xs');
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &__link {
+      display: block;
+      margin-top: 0.5rem;
+      color: color('text-color');
+      font-weight: 700;
+    }
+
+    &__title {
+      font-style: normal;
+      font-weight: 700;
+      line-height: 110%;
+      color: color('black');
+      text-decoration: none;
+
+      @include media-breakpoint-up(md) {
+        font-size: 2rem;
+      }
+    }
+
+    &__content {
+      @include media-breakpoint-up(md) {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+      }
+
+      @include media-breakpoint-down(md) {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  & > div {
+    position: relative;
+    z-index: 2;
+  }
+}

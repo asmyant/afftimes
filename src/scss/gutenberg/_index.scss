@@ -1,0 +1,12 @@
+.gutenberg {
+
+  img {
+    transition: $transition;
+  }
+
+  &:hover {
+    img {
+      opacity: $opacity-image-hover;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+<div class="comments__head">
+    <h3 class="h3 comments__title">
+        Комментарии
+        <span>(3)</span>
+    </h3>
+</div>
+
+{% include '../components/comment.twig' %}
+
+<div class="comments__form">
+    <h3 class="h3">Добавить комментарий</h3>
+    <p class="mt-1">Ваш адрес email не будет опубликован. Обязательные поля помечены *</p>
+
+    <form action="#" class="row mt-2 js-comments-form" novalidate>
+        <div class="col-lg-8">
+            <div class="row gx-1">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Имя*" id="name" name="name"
+                               required="required">
+                        <div class="invalid-feedback">
+                            Поле обязательно для заполнения
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Email*" id="email" name="email"
+                               required="required">
+                        <div class="invalid-feedback form-error">
+                            Необходимо ввести валидный E-mail
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="form-group">
+                    <textarea name="comment" id="comment" cols="30" rows="10" class="form-input"
+                              placeholder="Комментарий*" required="required"></textarea>
+                <div class="invalid-feedback">
+                    Поле обязательно для заполнения
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button class="btn--size-lg btn btn--gold-border">Отправить комментарий</button>
+
+            {# Для отправки комментария вам необходимо Авторизоваться #}
+            {#                <div class="btn--size-lg btn btn--gold-border" data-bs-toggle="tooltip" data-bs-placement="top"#}
+            {#                     title="Для отправки комментария вам необходимо Авторизоваться">#}
+            {#                    Отправить комментарий#}
+            {#                </div>#}
+        </div>
+    </form>
+</div>

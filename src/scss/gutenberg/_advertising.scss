@@ -1,0 +1,123 @@
+.advertising.gutenberg {
+  padding: 2.5rem;
+  @include gold-gradient;
+  margin: 5.5rem 0 3.5rem;
+  position: relative;
+  border-radius: radius('sm');
+  color: color('black');
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 1.5rem;
+    margin: 4.5rem 0 2.5rem;
+  }
+
+  &:hover {
+    &:before{
+      transform: scale(1.2);
+    }
+  }
+
+  &:before {
+    content: image('gutenberg/emoji.svg');
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 5;
+    transition: $transition transform;
+
+    @include media-breakpoint-up(lg) {
+      right: 10rem;
+      top: -5.5rem;
+    }
+  }
+
+  &:after {
+    content: 'Реклама';
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .advertising {
+    &__thumbnail {
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: radius('sm');
+
+        @include media-breakpoint-down(lg) {
+          height: 18rem;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        flex: 0 0 34.5rem;
+        max-width: 34.5rem;
+        margin-top: -5rem;
+        overflow: hidden;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          top: 0;
+          opacity: 1;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 2rem;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 1rem;
+      line-height: 110%;
+
+      @include media-breakpoint-up(md) {
+        max-width: 20rem;
+      }
+
+      @include media-breakpoint-down(lg) {
+        margin-top: 2rem;
+      }
+
+      &:hover{
+        color: color('black');
+        opacity: .6;
+      }
+    }
+
+    &__content {
+      font-size: 1.6rem;
+
+      @include media-breakpoint-up(md) {
+        padding-left: 3.5rem;
+      }
+
+      & > *:last-child{
+        margin: 0;
+      }
+
+      p {
+        color: color('black');
+      }
+
+      ol{
+        margin: 0;
+      }
+    }
+  }
+}
